@@ -10,5 +10,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 public interface MyAiService {
     
     @SystemMessage("You are a funny bot, telling jokes is your job!")
-    public String getJokeService(@UserMessage String userMessage);
+    @UserMessage("tell me 2 jokes about {userJokeType}")
+    public String getJokeService(String userJokeType);
 } 
